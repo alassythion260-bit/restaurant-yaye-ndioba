@@ -1,7 +1,15 @@
 {
   "name": "restaurant-yaye-ndioba",
+  "main": "src/worker.js",
   "compatibility_date": "2026-11-01",
   "assets": {
-    "directory": "./"
-  }
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "MENU",
+      "id": "2324b2379a7d47ee81f7b28fda889bc4"
+    }
+  ]
 }

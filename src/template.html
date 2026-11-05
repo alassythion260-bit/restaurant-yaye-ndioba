@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Restaurant Yaye Ndioba, cuisine sénégalaise à la Médina, Dakar</title>
+<meta name="description" content="Restaurant Yaye Ndioba, cuisine sénégalaise à la Médina, Dakar. Ouvert tous les jours de 12 h 30 à minuit. Commandez sur WhatsApp.">
+<meta name="theme-color" content="#0F3D2E">
+<meta property="og:title" content="Restaurant Yaye Ndioba, Médina, Dakar">
+<meta property="og:description" content="Cuisine sénégalaise, ouvert tous les jours de 12 h 30 à minuit.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+<script>
+(function () {
+  var l = null;
+  try { l = localStorage.getItem('yn-lang'); } catch (e) {}
+  if (l !== 'fr' && l !== 'en') l = /^fr\b/i.test(navigator.language || 'fr') ? 'fr' : 'en';
+  document.documentElement.lang = l;
+})();
+</script>
+<style>
+:root{
+  --green-900:#0A2B20; --green-800:#0F3D2E; --green-600:#0F6B4A;
+  --gold:#E0A030; --gold-ink:#2B1B00;
+  --bg:#F1F5F2; --card:#FFFFFF; --line:#D3E0D8; --ink:#10231B; --muted:#3D5A4C;
+  --f-display:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --f-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-text-size-adjust:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance}
+h2{font-weight:800;font-size:clamp(28px,5vw,38px);line-height:1.1}
+p{margin:0}
+.wrap{width:100%;max-width:1040px;margin:0 auto}
+section,header,nav,footer{padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}
+.banner{background:var(--gold);color:var(--gold-ink);padding:10px 24px;text-align:center;font-size:14px;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit}
+.btn-gold{background:var(--gold);color:var(--gold-ink)}
+.btn-line{border-color:#fff;color:#fff}
+.btn-green{background:var(--green-600);color:#fff}
+.btn-dark{background:var(--green-800);color:#fff}
+
+nav{background:var(--green-900);color:#fff;padding-top:14px;padding-bottom:14px}
+nav .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--f-display);font-weight:800;font-size:20px}
+.logo{width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--gold-ink);display:flex;align-items:center;justify-content:center;font-size:18px}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;font-size:15px}
+.links a{text-decoration:none;padding:10px 4px;color:#fff}
+.links a.btn{padding:10px 18px;min-height:44px}
+
+header.hero{background:var(--green-800);color:#fff;padding-top:72px;padding-bottom:80px}
+.hero .wrap{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.hero .text{flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.hero h1{font-weight:800;font-size:clamp(40px,8vw,76px);line-height:1;letter-spacing:-.02em}
+.hero p.lead{font-size:19px;max-width:520px;color:#CFE3D9}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;padding-top:8px}
+.glance{flex:1 1 300px;min-width:0;background:var(--green-900);border:1px solid #1E5A45;border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:18px}
+.glance dl{margin:0;display:flex;flex-direction:column;gap:4px}
+.glance dt{font-size:14px;color:#9FC4B3}
+.glance dd{margin:0;font-weight:700;font-size:20px}
+.glance hr{border:0;border-top:1px solid #1E5A45;margin:0;width:100%}
+
+.pad{padding-top:64px;padding-bottom:64px}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.card b{font-size:19px}
+.card span.sub{color:var(--muted);font-size:15px;line-height:1.5}
+.num{width:40px;height:40px;border-radius:10px;background:var(--green-800);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-weight:800;font-size:18px}
+.dish-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.price{font-weight:700;color:var(--green-600);white-space:nowrap}
+[hidden]{display:none!important}
+.drinks .dish-card img{aspect-ratio:2/3}
+.dish-card img.contain{object-fit:contain;background:#fff}
+.dish-grid.drinks{grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr))}
+.dish-card.out img{filter:grayscale(1);opacity:.55}
+.dish-card .badge{align-self:flex-start;background:#F3D9D4;color:#7A1F12;font-weight:700;font-size:13px;padding:3px 10px;border-radius:99px}
+.dish-card.out .price{background:#E4EDE8;color:var(--muted)}
+.svc-hours{color:var(--muted);font-weight:700;font-size:15px}
+.menu-empty{background:#fff;border:1px dashed var(--line);border-radius:14px;padding:28px;color:var(--muted);display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:18px}
+.dish-card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
+.dish-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(15,61,46,.14)}
+.dish-card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block}
+.dish-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px}
+.dish-body .dish-head{flex-wrap:wrap;align-items:center;gap:6px 10px}
+.dish-body b{font-size:18px}
+.dish-body .price{background:var(--gold);color:var(--gold-ink);padding:3px 10px;border-radius:99px;font-size:14px}
+.dish-body .sub{color:var(--muted);font-size:14.5px}
+.tabs{display:flex;flex-wrap:wrap;gap:10px}
+.tab{font-family:inherit;font-size:16px;font-weight:700;padding:12px 22px;min-height:46px;border-radius:99px;border:2px solid var(--green-800);background:#fff;color:var(--green-800);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--green-800);color:#fff}
+
+.steps{background:var(--green-800);color:#fff}
+.steps .grid{gap:24px}
+.step b.n{font-family:var(--f-display);font-size:40px;color:var(--gold);line-height:1;display:block}
+.step b{font-size:18px}
+.step span{display:block;color:#CFE3D9;font-size:15px;margin-top:4px}
+
+.hero-photo{flex:1 1 380px;min-width:0;margin:0;position:relative;border-radius:18px;overflow:hidden;border:3px solid var(--gold);box-shadow:0 18px 40px rgba(0,0,0,.35);aspect-ratio:8/5;max-width:100%;transform:rotate(1.2deg)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+.hero-photo figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;padding:40px 18px 14px;background:linear-gradient(transparent,rgba(5,25,18,.88));font-size:14px;color:#E6F0EA}
+.hero-photo figcaption span{display:flex;flex-direction:column;line-height:1.35}
+.hero-photo figcaption b{color:#fff;font-size:15px}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.shot{position:relative;padding:0;border:0;border-radius:14px;overflow:hidden;cursor:zoom-in;background:var(--line);aspect-ratio:4/5;display:block;font:inherit}
+.shot.wide{grid-column:1/-1;aspect-ratio:16/8}
+.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.shot:hover img{transform:scale(1.05)}
+.shot span{position:absolute;left:12px;bottom:12px;background:rgba(10,43,32,.85);color:#fff;font-weight:700;font-size:14px;padding:6px 12px;border-radius:99px}
+@media (max-width:640px){.shot.wide{aspect-ratio:4/3}}
+.lightbox[hidden]{display:none}
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(4,18,13,.94);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));cursor:zoom-out}
+.lightbox img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6);animation:panelin .3s ease both}
+.lightbox button{position:absolute;top:max(16px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));min-width:48px;min-height:48px;border-radius:99px;border:0;background:#fff;color:var(--ink);font-size:22px;font-weight:700;cursor:pointer}
+.photo{aspect-ratio:4/3;border-radius:12px;background:repeating-linear-gradient(135deg,#D3E0D8 0,#D3E0D8 14px,#E4EDE8 14px,#E4EDE8 28px);display:flex;align-items:flex-end;padding:14px}
+.photo span{background:#fff;border-radius:6px;padding:4px 10px;font-size:14px;font-weight:700}
+
+.joj{background:#E9F0EC;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.joj .wrap{display:flex;flex-wrap:wrap;gap:28px;align-items:center}
+.joj .l{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.joj .r{flex:1 1 280px;min-width:0}
+.joj .kicker{color:var(--green-600)}
+
+.map-box{display:flex;flex-direction:column;gap:12px}
+.map{width:100%;height:380px;border:0;border-radius:12px;background:#E4EDE8;display:block}
+.map-open{align-self:flex-start;display:inline-flex;align-items:center;min-height:48px;padding:12px 22px;border-radius:8px;background:var(--green-800);color:#fff;font-weight:700;text-decoration:none}
+.infos{display:flex;flex-direction:column;gap:24px}
+.infos .card a.link{color:var(--green-600);font-weight:700;text-decoration:underline;padding:8px 0;align-self:flex-start}
+
+details{border:1px solid var(--line);border-radius:10px;padding:0 20px;background:#fff}
+details+details{margin-top:12px}
+summary{cursor:pointer;font-weight:700;font-size:17px;padding:18px 0;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;font-size:22px;line-height:1;color:var(--green-600)}
+details[open] summary::after{content:"\2212"}
+details p{margin:0 0 18px;color:var(--muted)}
+
+.final{background:var(--gold);color:var(--gold-ink);padding-top:56px;padding-bottom:56px}
+.final .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.final h2{flex:1 1 360px;min-width:0;font-size:clamp(26px,4vw,32px)}
+footer{background:var(--green-900);color:#A9C2B5;padding-top:28px;padding-bottom:calc(96px + env(safe-area-inset-bottom));font-size:14px;text-align:center;line-height:1.6}
+
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:20;background:var(--green-600);color:#fff;font-weight:700;text-decoration:none;padding:14px 20px;min-height:52px;border-radius:99px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.fab{left:max(16px,env(safe-area-inset-left));right:auto;animation:pulse 2.4s ease-out infinite}
+.fab svg{width:24px;height:24px;fill:#fff;flex:none}
+@keyframes pulse{0%{box-shadow:0 6px 18px rgba(0,0,0,.28),0 0 0 0 rgba(15,107,74,.55)}70%{box-shadow:0 6px 18px rgba(0,0,0,.28),0 0 0 16px rgba(15,107,74,0)}100%{box-shadow:0 6px 18px rgba(0,0,0,.28),0 0 0 0 rgba(15,107,74,0)}}
+/* Animations au clic */
+.btn,.tab,.fab,.card,summary{transition:transform .15s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease;-webkit-tap-highlight-color:transparent}
+.btn:hover,.fab:hover{transform:translateY(-2px)}
+.btn:active,.tab:active,.fab:active{transform:scale(.94)}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(15,61,46,.12)}
+.btn,.tab,.fab{position:relative;overflow:hidden}
+.fab{position:fixed}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rip .6s ease-out;pointer-events:none}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+.panel-in{animation:panelin .35s ease both}
+@keyframes panelin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+details[open]>p{animation:panelin .3s ease both}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fab,.panel-in,.ripple,details[open]>p{animation:none}.reveal{opacity:1;transform:none;transition:none}.btn,.tab,.fab,.card{transition:none}}
+html[lang="en"] [data-l="fr"],html:not([lang="en"]) [data-l="en"]{display:none!important}
+.lang{font-family:inherit;font-size:15px;font-weight:700;min-height:44px;min-width:52px;padding:8px 14px;border-radius:8px;border:2px solid rgba(255,255,255,.45);background:transparent;color:#fff;cursor:pointer}
+.lang:hover{border-color:var(--gold);color:var(--gold)}
+.step b span{display:inline;color:inherit;font-size:inherit;margin:0}
+.shot>span{position:absolute;left:12px;bottom:12px;background:rgba(10,43,32,.85);color:#fff;font-weight:700;font-size:14px;padding:6px 12px;border-radius:99px}
+</style>
+<!--JSONLD-->
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><div class="logo" aria-hidden="true">YN</div><span>Yaye Ndioba</span></div>
+    <div class="links">
+      <a href="#menu">Menu</a>
+      <a href="#photos"><span data-l="fr">Le lieu</span><span data-l="en">The place</span></a>
+      <a href="#infos"><span data-l="fr">Infos</span><span data-l="en">Info</span></a>
+      <a href="#faq"><span data-l="fr">Questions</span><span data-l="en">FAQ</span></a>
+      <button class="lang" type="button" id="lang-btn" aria-label="Change language / Changer de langue"><span data-l="fr">EN</span><span data-l="en">FR</span></button>
+      <a class="btn btn-gold" href="https://wa.me/221777147957" data-wa>WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="text">
+      <div class="kicker"><span data-l="fr">Cuisine sénégalaise · Médina, Dakar</span><span data-l="en">Senegalese food · Médina, Dakar</span></div>
+      <h1>Restaurant<br>Yaye Ndioba</h1>
+      <p class="lead"><span data-l="fr">Des plats sénégalais généreux, servis dans une adresse calme au cœur de la Médina. Sur place ou à emporter.</span><span data-l="en">Generous Senegalese dishes in a calm spot in the heart of the Médina. Eat in or take away.</span></p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#menu"><span data-l="fr">Voir le menu</span><span data-l="en">See the menu</span></a>
+        <a class="btn btn-line" href="https://wa.me/221777147957" data-wa><span data-l="fr">Commander sur WhatsApp</span><span data-l="en">Order on WhatsApp</span></a>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="/img/devanture.webp" width="1280" height="858" alt="La devanture du Restaurant Yaye Ndioba, Rue 9 à la Médina, avec son enseigne verte" fetchpriority="high">
+      <figcaption>
+        <span><b><span data-l="fr">Ouvert tous les jours</span><span data-l="en">Open every day</span></b><span data-l="fr">12 h 30 – minuit</span><span data-l="en">12:30 pm – midnight</span></span>
+        <span><b>Rue 9, Médina</b>77 714 79 57</span>
+      </figcaption>
+    </figure>
+  </div>
+</header>
+
+<section class="pad" style="padding-bottom:24px">
+  <div class="wrap grid g3">
+    <div class="card"><div class="num" aria-hidden="true">1</div><b><span data-l="fr">Cuisine sénégalaise</span><span data-l="en">Real Senegalese food</span></b><span class="sub"><span data-l="fr">Mafé, thiéboudienne, yassa, domoda… des plats du pays à partir de <!--MIN_FR-->.</span><span data-l="en">Mafé, thiéboudienne, yassa, domoda… local dishes from <!--MIN_EN-->.</span></span></div>
+    <div class="card"><div class="num" aria-hidden="true">2</div><b><span data-l="fr">Groupes bienvenus</span><span data-l="en">Groups welcome</span></b><span class="sub"><span data-l="fr">Tables réservables pour les groupes et les délégations, sur WhatsApp.</span><span data-l="en">Tables can be booked for groups and delegations on WhatsApp.</span></span></div>
+    <div class="card"><div class="num" aria-hidden="true">3</div><b><span data-l="fr">Ouvert tard, 7 jours sur 7</span><span data-l="en">Open late, 7 days a week</span></b><span class="sub"><span data-l="fr">Du déjeuner jusqu’à minuit, avant ou après une épreuve des JOJ.</span><span data-l="en">From lunch until midnight, before or after a Youth Olympic Games event.</span></span></div>
+  </div>
+</section>
+
+<section class="pad" id="menu">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <h2><span data-l="fr">Le menu</span><span data-l="en">The menu</span></h2>
+      <span style="color:var(--muted)"><span data-l="fr">Prix en FCFA. Sur place ou à emporter.</span><span data-l="en">Prices in CFA francs (FCFA). Eat in or take away.</span></span>
+    </div>
+<!--MENU-->
+  </div>
+</section>
+
+<section class="pad steps">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:28px">
+    <h2><span data-l="fr">Commander en 3 étapes</span><span data-l="en">Order in 3 steps</span></h2>
+    <div class="grid g3">
+      <div class="step"><b class="n">1</b><b><span data-l="fr">Écrivez sur WhatsApp</span><span data-l="en">Message us on WhatsApp</span></b><span data-l="fr">Dites ce que vous voulez et pour quelle heure.</span><span data-l="en">Tell us what you want and for what time.</span></div>
+      <div class="step"><b class="n">2</b><b><span data-l="fr">Confirmez</span><span data-l="en">Confirm</span></b><span data-l="fr">Le restaurant vous répond avec le prix et le délai.</span><span data-l="en">We reply with the price and the waiting time.</span></div>
+      <div class="step"><b class="n">3</b><b><span data-l="fr">Venez manger ou récupérer</span><span data-l="en">Eat in or pick up</span></b><span data-l="fr">Sur place à la Médina, ou à emporter.</span><span data-l="en">At our place in the Médina, or take it away.</span></div>
+    </div>
+    <a class="btn btn-gold" style="align-self:flex-start" href="https://wa.me/221777147957" data-wa><span data-l="fr">Commander sur WhatsApp</span><span data-l="en">Order on WhatsApp</span></a>
+  </div>
+</section>
+
+<section class="pad" id="photos">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <h2><span data-l="fr">Le restaurant</span><span data-l="en">The restaurant</span></h2>
+      <span style="color:var(--muted)"><span data-l="fr">Une grande salle à l’intérieur et une terrasse couverte côté rue. Touchez une photo pour l’agrandir.</span><span data-l="en">A large dining room inside and a covered terrace on the street side. Tap a photo to enlarge it.</span></span>
+    </div>
+    <div class="gallery">
+      <button class="shot wide" type="button"><img src="/img/salle.webp" loading="lazy" width="1280" height="714" alt="La salle principale avec ses tables dressées et un écran au fond"><span data-l="fr">La salle principale</span><span data-l="en">Main dining room</span></button>
+      <button class="shot" type="button"><img src="/img/cote-salle.webp" loading="lazy" width="671" height="1000" alt="Un coin de la salle, murs en pierre décorative et suspension en métal"><span data-l="fr">Côté salle</span><span data-l="en">Inside</span></button>
+      <button class="shot" type="button"><img src="/img/terrasse.webp" loading="lazy" width="671" height="1000" alt="La terrasse couverte avec nappes en tissu africain et claustras ouvragés"><span data-l="fr">La terrasse</span><span data-l="en">The terrace</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="pad joj">
+  <div class="wrap">
+    <div class="l">
+      <div class="kicker"><span data-l="fr">JOJ Dakar 2026 · 31 oct. – 13 nov.</span><span data-l="en">Dakar 2026 Youth Olympic Games · Oct 31 – Nov 13</span></div>
+      <h2><span data-l="fr">Vous venez pour les Jeux ?</span><span data-l="en">In Dakar for the Games?</span></h2>
+      <p style="font-size:17px;color:#28443A"><span data-l="fr">La Médina est le quartier du stade Iba Mar Diop, l’un des sites des Jeux olympiques de la jeunesse. Venez manger sénégalais avant ou après une épreuve.</span><span data-l="en">The Médina is home to Iba Mar Diop Stadium, one of the Youth Olympic Games venues. Come and taste real Senegalese food before or after an event.</span></p>
+    </div>
+    <div class="r card"><b><span data-l="fr">Groupes et délégations</span><span data-l="en">Groups and delegations</span></b><span class="sub"><span data-l="fr">Réservez vos tables à l’avance : écrivez-nous sur WhatsApp avec le nombre de personnes et l’heure d’arrivée.</span><span data-l="en">Book your tables in advance: message us on WhatsApp with the number of people and your arrival time.</span></span><a class="btn btn-green" style="align-self:flex-start;margin-top:8px" href="https://wa.me/221777147957" data-wa><span data-l="fr">Réserver une table</span><span data-l="en">Book a table</span></a></div>
+  </div>
+</section>
+
+<section class="pad" id="infos">
+  <div class="wrap infos">
+    <h2><span data-l="fr">Infos pratiques</span><span data-l="en">Practical info</span></h2>
+    <div class="grid g3">
+      <div class="card"><b><span data-l="fr">Horaires</span><span data-l="en">Opening hours</span></b><div style="display:flex;justify-content:space-between;gap:12px"><span data-l="fr">Lundi à dimanche</span><span data-l="en">Monday to Sunday</span><b style="font-size:16px"><span data-l="fr">12 h 30 – 00 h 00</span><span data-l="en">12:30 pm – midnight</span></b></div><span class="sub"><span data-l="fr">Sur place ou à emporter.</span><span data-l="en">Eat in or take away.</span></span></div>
+      <div class="card"><b><span data-l="fr">Adresse</span><span data-l="en">Address</span></b><span>Rue 9, Médina, Dakar</span><a class="link" href="https://maps.google.com/?cid=10503163626381370275" target="_blank" rel="noopener" data-maps><span data-l="fr">Ouvrir dans Google Maps</span><span data-l="en">Open in Google Maps</span></a></div>
+      <div class="card"><b><span data-l="fr">Contact et paiement</span><span data-l="en">Contact and payment</span></b><span><span data-l="fr">Téléphone et WhatsApp</span><span data-l="en">Phone and WhatsApp</span> : 77 714 79 57</span><span class="sub"><span data-l="fr">Paiement par Orange Money ou Wave.</span><span data-l="en">Payment by Orange Money or Wave.</span></span><span class="sub"><span data-l="fr">On parle un anglais simple.</span><span data-l="en">We speak basic English.</span></span></div>
+    </div>
+    <div class="map-box">
+      <iframe class="map" title="Carte : Restaurant Yaye Ndioba, Rue 9, Médina, Dakar" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+        src="https://maps.google.com/maps?q=14.6791572,-17.4481207&amp;hl=fr&amp;z=17&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
+      <a class="map-open" href="https://maps.google.com/?cid=10503163626381370275" target="_blank" rel="noopener" data-maps><span data-l="fr">Ouvrir l’itinéraire dans Google Maps</span><span data-l="en">Get directions in Google Maps</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="faq" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap" style="max-width:760px;display:flex;flex-direction:column;gap:20px">
+    <h2><span data-l="fr">Questions fréquentes</span><span data-l="en">Frequently asked questions</span></h2>
+    <div>
+      <details><summary><span data-l="fr">Peut-on commander à emporter ?</span><span data-l="en">Can I order takeaway?</span></summary><p><span data-l="fr">Oui. Envoyez votre commande sur WhatsApp avec l’heure de passage, elle sera prête à votre arrivée.</span><span data-l="en">Yes. Send your order on WhatsApp with your pick-up time and it will be ready when you arrive.</span></p></details>
+      <details><summary><span data-l="fr">Quels moyens de paiement acceptez-vous ?</span><span data-l="en">How can I pay?</span></summary><p><span data-l="fr">Orange Money et Wave.</span><span data-l="en">Orange Money and Wave.</span></p></details>
+      <details><summary><span data-l="fr">Peut-on réserver pour un groupe ou une délégation ?</span><span data-l="en">Can groups or delegations book a table?</span></summary><p><span data-l="fr">Oui. Écrivez-nous sur WhatsApp avec le nombre de personnes et l’heure d’arrivée, et nous préparons vos tables.</span><span data-l="en">Yes. Message us on WhatsApp with the number of people and your arrival time, and we will get your tables ready.</span></p></details>
+      <details><summary><span data-l="fr">Parlez-vous anglais ?</span><span data-l="en">Do you speak English?</span></summary><p><span data-l="fr">Oui, un anglais simple. Cette page existe aussi en anglais : bouton EN en haut.</span><span data-l="en">Yes, basic English. You can also write to us in English on WhatsApp.</span></p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2><span data-l="fr">Une envie de cuisine sénégalaise ?</span><span data-l="en">Hungry for Senegalese food?</span></h2>
+    <a class="btn btn-dark" href="https://wa.me/221777147957" data-wa><span data-l="fr">Écrire sur WhatsApp</span><span data-l="en">Message us on WhatsApp</span></a>
+  </div>
+</section>
+
+<footer>
+  Restaurant Yaye Ndioba · Rue 9, Médina, Dakar · 77 714 79 57<br>
+  <span data-l="fr">Page réalisée par Alassane.</span><span data-l="en">Website by Alassane.</span>
+</footer>
+
+<a class="fab" href="https://wa.me/221777147957" data-wa aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp</a>
+
+<script>
+(function () {
+  // WhatsApp : sur téléphone, ouvre directement l'application sur la discussion avec le restaurant.
+  var phone = '221777147957';
+  function msg() { return encodeURIComponent(document.documentElement.lang === 'en' ? 'Hello, I am writing from your website. ' : 'Bonjour, je vous écris depuis votre page web. '); }
+  function web() { return 'https://wa.me/' + phone + '?text=' + msg(); }
+  var ua = navigator.userAgent;
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var isMobile = isAndroid || isIOS;
+  // Navigateurs intégrés (Facebook, Instagram, aperçus de fichiers…) : ils refusent les liens d'application
+  var inApp = /; wv\)|FBAN|FBAV|FB_IAB|Instagram|Line\/|Snapchat|TikTok|musical_ly/i.test(ua);
+  var androidDirect = isAndroid && !inApp;
+
+  // WhatsApp
+  //  - Android (Chrome, Samsung Internet…) : ouvre directement WhatsApp ou WhatsApp Business ;
+  //    si aucune des deux n'est installée, le navigateur ouvre wa.me à la place, sans message d'erreur.
+  //  - iPhone : le lien wa.me est reconnu par iOS et ouvre l'application WhatsApp.
+  //  - Ordinateur : WhatsApp Web, directement sur la discussion.
+  function href() {
+    if (androidDirect) return 'intent://send/?phone=' + phone + '&text=' + msg() + '#Intent;scheme=whatsapp;S.browser_fallback_url=' + encodeURIComponent(web()) + ';end';
+    if (isMobile) return web();
+    return 'https://web.whatsapp.com/send?phone=' + phone + '&text=' + msg();
+  }
+  var links = document.querySelectorAll('a[data-wa]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].setAttribute('href', href());
+    links[i].setAttribute('rel', 'noopener');
+    if (isMobile) links[i].removeAttribute('target'); else links[i].setAttribute('target', '_blank');
+  }
+
+  // Google Maps
+  //  - Android : ouvre l'application Google Maps sur la fiche du restaurant ; sinon la carte web.
+  //  - iPhone et ordinateur : lien Google Maps officiel (ouvre l'application si elle est installée).
+  var mapsWeb = 'https://maps.google.com/?cid=10503163626381370275';
+  var mapsHref = androidDirect
+    ? 'intent://maps.google.com/?cid=10503163626381370275#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=' + encodeURIComponent(mapsWeb) + ';end'
+    : mapsWeb;
+  var maps = document.querySelectorAll('a[data-maps]');
+  for (var m = 0; m < maps.length; m++) {
+    maps[m].setAttribute('href', mapsHref);
+    if (isMobile) maps[m].removeAttribute('target');
+  }
+
+  // Bascule français / anglais
+  var TITLES = {fr: 'Restaurant Yaye Ndioba, cuisine sénégalaise à la Médina, Dakar', en: 'Restaurant Yaye Ndioba, Senegalese food in the Médina, Dakar'};
+  function setLang(l) {
+    document.documentElement.lang = l;
+    document.title = TITLES[l];
+    try { localStorage.setItem('yn-lang', l); } catch (e) {}
+    var ls = document.querySelectorAll('a[data-wa]');
+    for (var j = 0; j < ls.length; j++) ls[j].setAttribute('href', href());
+  }
+  document.getElementById('lang-btn').addEventListener('click', function () {
+    setLang(document.documentElement.lang === 'en' ? 'fr' : 'en');
+  });
+  document.title = TITLES[document.documentElement.lang === 'en' ? 'en' : 'fr'];
+
+  // Onglets du menu (Matin / Soir / Boissons)
+  var tabs = [];
+  var tabBtns = document.querySelectorAll('#menu [role="tab"]');
+  for (var t = 0; t < tabBtns.length; t++) {
+    tabs.push({ btn: tabBtns[t], panel: document.getElementById(tabBtns[t].getAttribute('aria-controls')) });
+  }
+  function select(index) {
+    for (var j = 0; j < tabs.length; j++) {
+      var on = j === index;
+      tabs[j].btn.setAttribute('aria-selected', on ? 'true' : 'false');
+      tabs[j].panel.hidden = !on;
+      tabs[j].panel.classList.remove('panel-in');
+      if (on) { void tabs[j].panel.offsetWidth; tabs[j].panel.classList.add('panel-in'); }
+    }
+  }
+
+  // Agrandissement des photos
+  var lb = document.createElement('div');
+  lb.className = 'lightbox'; lb.hidden = true;
+  lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Photo agrandie');
+  lb.innerHTML = '<img alt=""><button type="button" aria-label="Fermer">×</button>';
+  document.body.appendChild(lb);
+  var lbImg = lb.querySelector('img'), lbBtn = lb.querySelector('button'), lastShot = null;
+  function closeLb() { lb.hidden = true; document.body.style.overflow = ''; if (lastShot) lastShot.focus(); }
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) closeLb(); });
+  var shots = document.querySelectorAll('.shot');
+  for (var q = 0; q < shots.length; q++) {
+    shots[q].addEventListener('click', function () {
+      lastShot = this;
+      lbImg.src = this.querySelector('img').src;
+      lbImg.alt = this.querySelector('img').alt;
+      lb.hidden = false; document.body.style.overflow = 'hidden'; lbBtn.focus();
+    });
+  }
+
+  // Effet d'onde au clic
+  var rippleEls = document.querySelectorAll('.btn, .tab, .fab');
+  for (var r = 0; r < rippleEls.length; r++) {
+    rippleEls[r].addEventListener('pointerdown', function (e) {
+      var rect = this.getBoundingClientRect();
+      var size = Math.max(rect.width, rect.height);
+      var s = document.createElement('span');
+      s.className = 'ripple';
+      s.style.width = s.style.height = size + 'px';
+      s.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      s.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      this.appendChild(s);
+      setTimeout(function () { s.remove(); }, 600);
+    });
+  }
+
+  // Apparition des sections au défilement
+  var rev = document.querySelectorAll('.pad .wrap, .final .wrap');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); } });
+    }, { threshold: 0.08 });
+    rev.forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
+  }
+  for (var k = 0; k < tabs.length; k++) {
+    (function (n) { tabs[n].btn.addEventListener('click', function () { select(n); }); })(k);
+  }
+})();
+</script>
+</body>
+</html>

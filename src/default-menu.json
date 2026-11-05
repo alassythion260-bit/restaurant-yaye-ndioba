@@ -1,0 +1,23 @@
+{
+  "settings": { "switchHour": 17, "matinHours": "", "soirHours": "" },
+  "sections": {
+    "matin": [
+      { "id": "mafe-viande", "name": "Mafé à la viande", "name_en": "Mafé with meat", "desc": "Viande mijotée dans une sauce à l’arachide.", "desc_en": "Meat slow-cooked in a peanut sauce.", "price": 1500, "img": "/img/mafe-viande.webp", "available": true },
+      { "id": "thieboudienne", "name": "Thiéboudienne", "name_en": "Thiéboudienne", "desc": "Riz au poisson, légumes et sauce tomate.", "desc_en": "Rice with fish, vegetables and tomato sauce. Senegal’s national dish.", "price": 1500, "img": "/img/thieboudienne.webp", "available": true },
+      { "id": "thiebou-guinar", "name": "Thiébou guinar", "name_en": "Thiébou guinar", "desc": "Riz cuisiné au poulet, morceaux de poulet dorés.", "desc_en": "Rice cooked with chicken, golden chicken pieces.", "price": 2000, "img": "/img/thiebou-guinar.webp", "available": true },
+      { "id": "thiebou-yapp", "name": "Thiébou yapp", "name_en": "Thiébou yapp", "desc": "Riz cuisiné à la viande.", "desc_en": "Rice cooked with meat.", "price": 1500, "img": "/img/thiebou-yapp.webp", "available": true },
+      { "id": "yassa-viande", "name": "Yassa à la viande", "name_en": "Yassa with meat", "desc": "Viande en sauce aux oignons et au citron, riz blanc.", "desc_en": "Meat in an onion and lemon sauce, with white rice.", "price": 1500, "img": "/img/yassa-viande.webp", "available": true },
+      { "id": "mborokhe-viande", "name": "Mborokhé à la viande", "name_en": "Mborokhé with meat", "desc": "Spécialité sénégalaise à la viande, servie avec du riz blanc.", "desc_en": "Senegalese meat specialty, served with white rice.", "price": 1500, "img": "/img/mborokhe-viande.webp", "available": true },
+      { "id": "domoda-viande", "name": "Domoda à la viande", "name_en": "Domoda with meat", "desc": "Viande en sauce tomate épaisse, servie avec du riz blanc.", "desc_en": "Meat in a rich tomato sauce, with white rice.", "price": 1500, "img": "/img/domoda-viande.webp", "available": true },
+      { "id": "yassa-guinar", "name": "Yassa guinar", "name_en": "Chicken yassa", "desc": "Poulet en sauce aux oignons et au citron, riz blanc.", "desc_en": "Chicken in an onion and lemon sauce, with white rice.", "price": 2000, "img": "/img/yassa-guinar.webp", "available": true }
+    ],
+    "soir": [],
+    "boissons": [
+      { "id": "jus-orange", "name": "Jus d’orange", "name_en": "Orange juice", "desc": "Orange pressée, servie bien fraîche.", "desc_en": "Freshly squeezed, served cold.", "price": 500, "img": "/img/jus-orange.webp", "available": true, "contain": true },
+      { "id": "jus-ditakh", "name": "Jus de ditakh", "name_en": "Ditakh juice", "desc": "Jus du fruit de ditakh, bien vert et rafraîchissant.", "desc_en": "Juice of the ditakh, a green Senegalese fruit. Very refreshing.", "price": 500, "img": "/img/jus-ditakh.webp", "available": true },
+      { "id": "jus-bissap", "name": "Jus de bissap", "name_en": "Bissap juice", "desc": "Fleurs d’hibiscus, servi glacé.", "desc_en": "Hibiscus flower juice, served iced.", "price": 500, "img": "/img/jus-bissap.webp", "available": true },
+      { "id": "jus-ginger", "name": "Jus de ginger", "name_en": "Ginger juice", "desc": "Gingembre frais et citron vert.", "desc_en": "Fresh ginger and lime.", "price": 500, "img": "/img/jus-ginger.webp", "available": true },
+      { "id": "jus-bouye", "name": "Jus de bouye", "name_en": "Bouye juice", "desc": "Pulpe du fruit du baobab, onctueux.", "desc_en": "Creamy baobab fruit juice.", "price": 500, "img": "/img/jus-bouye.webp", "available": true }
+    ]
+  }
+}

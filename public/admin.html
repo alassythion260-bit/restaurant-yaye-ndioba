@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A2B20">
+<title>Gestion du menu · Yaye Ndioba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{
+  --green-900:#0A2B20; --green-800:#0F3D2E; --green-600:#0F6B4A;
+  --gold:#E0A030; --gold-ink:#2B1B00;
+  --bg:#F1F5F2; --card:#fff; --line:#D3E0D8; --ink:#10231B; --muted:#3D5A4C;
+  --red:#A3281A; --red-bg:#F8E3DF;
+  --f-display:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --f-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:150px;scroll-padding-bottom:110px}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:var(--bg);line-height:1.45;font-size:16px}
+h1,h2{font-family:var(--f-display);font-weight:800;margin:0;line-height:1.1}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left)) 0 max(16px,env(safe-area-inset-right))}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 20px;border-radius:10px;border:2px solid transparent;font-weight:700;font-size:16px;text-decoration:none;background:none}
+.btn-gold{background:var(--gold);color:var(--gold-ink)}
+.btn-green{background:var(--green-600);color:#fff}
+.btn-line{border-color:var(--line);background:#fff;color:var(--ink)}
+.btn-red{background:var(--red-bg);color:var(--red)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn-block{width:100%}
+
+/* Connexion */
+.login{min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;background:var(--green-800);padding:24px}
+.login form{background:#fff;border-radius:18px;padding:28px 22px;width:100%;max-width:380px;display:flex;flex-direction:column;gap:16px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.logo{width:52px;height:52px;border-radius:50%;background:var(--gold);color:var(--gold-ink);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-weight:800;font-size:20px}
+.login h1{font-size:26px}
+.login p{margin:0;color:var(--muted)}
+.check{display:flex;align-items:center;gap:10px;min-height:44px}
+.check input{width:22px;height:22px;accent-color:var(--green-600)}
+.err{background:var(--red-bg);color:var(--red);border-radius:10px;padding:10px 14px;font-weight:700;font-size:15px}
+
+label.f{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:15px}
+label.f small{font-weight:400;color:var(--muted)}
+input[type=text],input[type=password],input[type=number],select,textarea{width:100%;min-height:48px;padding:10px 14px;border:2px solid var(--line);border-radius:10px;background:#fff;font-size:16px}
+textarea{min-height:84px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--green-600);outline:none}
+
+/* En-tête */
+.top{background:var(--green-900);color:#fff;padding-top:max(14px,env(safe-area-inset-top));padding-bottom:14px;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top .brand{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:800;font-size:18px}
+.top .logo{width:38px;height:38px;font-size:15px}
+.top a,.top button{color:#fff;font-weight:700;font-size:14px;background:none;border:2px solid rgba(255,255,255,.35);border-radius:8px;min-height:40px;padding:6px 12px;text-decoration:none;display:inline-flex;align-items:center}
+.top .acts{display:flex;gap:8px}
+
+main.wrap{padding-top:20px;padding-bottom:calc(130px + env(safe-area-inset-bottom,0px))}
+.intro{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.intro h1{font-size:28px}
+.intro p{margin:0;color:var(--muted)}
+
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px;position:sticky;top:calc(68px + env(safe-area-inset-top));z-index:4}
+.seg button{border:0;background:none;border-radius:10px;min-height:48px;font-weight:700;font-size:16px;color:var(--green-800);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.15;padding:4px}
+.seg button small{font-weight:500;font-size:12px;color:var(--muted)}
+.seg button[aria-selected=true]{background:var(--green-800);color:#fff}
+.seg button[aria-selected=true] small{color:#BFD8CC}
+
+.list{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:start}
+.item.out{background:#F7F9F8}
+.thumb{width:84px;height:84px;border-radius:10px;object-fit:cover;background:repeating-linear-gradient(135deg,#E4EDE8 0,#E4EDE8 8px,#F1F5F2 8px,#F1F5F2 16px);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);text-align:center;overflow:hidden}
+.item.out .thumb{filter:grayscale(1);opacity:.6}
+.info{display:flex;flex-direction:column;gap:6px;min-width:0}
+.info .name{font-weight:700;font-size:17px;overflow-wrap:anywhere}
+.info .price{align-self:flex-start;background:var(--gold);color:var(--gold-ink);font-weight:700;font-size:14px;padding:2px 10px;border-radius:99px}
+.item.out .price{background:#E4EDE8;color:var(--muted)}
+.tag{align-self:flex-start;font-size:13px;font-weight:700;padding:2px 10px;border-radius:99px}
+.tag.out{background:var(--red-bg);color:var(--red)}
+.tag.new{background:#DDEFE6;color:var(--green-600)}
+.row{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line);padding-top:10px}
+.row .btn{min-height:44px;padding:8px 14px;font-size:15px}
+.row .grow{flex:1 1 auto}
+.ico{min-width:44px;padding:8px!important}
+
+.empty{background:#fff;border:2px dashed var(--line);border-radius:14px;padding:28px 18px;text-align:center;color:var(--muted)}
+.add{margin-top:14px}
+
+details.set{margin-top:28px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 16px}
+details.set summary{min-height:56px;display:flex;align-items:center;font-weight:700;cursor:pointer;list-style:none}
+details.set summary::-webkit-details-marker{display:none}
+details.set summary::after{content:"+";margin-left:auto;font-size:22px;color:var(--green-600)}
+details.set[open] summary::after{content:"\2212"}
+details.set .body{display:flex;flex-direction:column;gap:14px;padding-bottom:18px}
+
+/* Barre d'enregistrement */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:6;background:#fff;border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(15,61,46,.1);padding:12px 0 max(12px,env(safe-area-inset-bottom))}
+.bar .wrap{display:flex;align-items:center;gap:12px}
+.bar .state{flex:1;font-size:14px;color:var(--muted);font-weight:500}
+.bar .state.dirty{color:#8A5A00;font-weight:700}
+.bar .btn{flex:none}
+
+/* Fenêtre d'édition */
+.sheet{position:fixed;inset:0;z-index:10;background:rgba(4,18,13,.6);display:flex;align-items:flex-end;justify-content:center}
+.sheet .panel{background:var(--bg);width:100%;max-width:640px;max-height:94vh;max-height:94dvh;overflow:auto;border-radius:20px 20px 0 0;padding:18px max(16px,env(safe-area-inset-left)) max(18px,env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:16px;animation:up .25s ease both}
+@media (min-width:700px){.sheet{align-items:center}.sheet .panel{border-radius:20px}}
+@keyframes up{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
+.sheet h2{font-size:22px}
+.photo-pick{display:flex;flex-direction:column;gap:10px}
+.photo-pick .prev{width:100%;aspect-ratio:4/3;border-radius:14px;object-fit:cover;background:repeating-linear-gradient(135deg,#E4EDE8 0,#E4EDE8 12px,#F1F5F2 12px,#F1F5F2 24px);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+.photo-pick .btns{display:flex;gap:8px;flex-wrap:wrap}
+.photo-pick .btns .btn{flex:1 1 140px}
+.price-wrap{position:relative}
+.price-wrap span{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;pointer-events:none}
+.price-wrap input{padding-right:70px}
+.en{border:1px solid var(--line);border-radius:12px;background:#fff;padding:0 14px}
+.en summary{min-height:48px;display:flex;align-items:center;font-weight:700;font-size:15px;cursor:pointer}
+.en .body{display:flex;flex-direction:column;gap:12px;padding-bottom:14px}
+.sheet .acts{display:flex;gap:10px;flex-wrap:wrap}
+.sheet .acts .btn{flex:1 1 140px}
+
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:20;background:var(--green-800);color:#fff;font-weight:700;padding:12px 18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:calc(100% - 32px);text-align:center}
+.toast.bad{background:var(--red)}
+.spin{width:18px;height:18px;border:3px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp 0.8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<!-- Connexion -->
+<div class="login" id="login">
+  <form id="login-form" autocomplete="on">
+    <div class="logo" aria-hidden="true">YN</div>
+    <h1>Gestion du menu</h1>
+    <p>Restaurant Yaye Ndioba</p>
+    <label class="f">Mot de passe
+      <input type="password" id="pw" autocomplete="current-password" required>
+    </label>
+    <label class="check"><input type="checkbox" id="pw-see"> Afficher le mot de passe</label>
+    <label class="check"><input type="checkbox" id="remember" checked> Rester connecté sur ce téléphone</label>
+    <div class="err" id="login-err" hidden></div>
+    <button class="btn btn-gold btn-block" type="submit" id="login-btn">Se connecter</button>
+  </form>
+</div>
+
+<!-- Gestion -->
+<div id="app" hidden>
+  <header class="top">
+    <div class="wrap">
+      <div class="brand"><div class="logo" aria-hidden="true">YN</div><span>Menu</span></div>
+      <div class="acts">
+        <a href="/" target="_blank" rel="noopener">Voir le site</a>
+        <button type="button" id="logout">Quitter</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="intro">
+      <h1>Votre menu</h1>
+      <p>Choisissez le menu, modifiez les plats, puis appuyez sur <b>Enregistrer</b>.</p>
+    </div>
+
+    <div class="seg" role="tablist" aria-label="Menus">
+      <button type="button" role="tab" data-s="matin" aria-selected="true">Matin<small></small></button>
+      <button type="button" role="tab" data-s="soir" aria-selected="false">Soir<small></small></button>
+      <button type="button" role="tab" data-s="boissons" aria-selected="false">Boissons<small></small></button>
+    </div>
+
+    <div class="list" id="list" role="tabpanel"></div>
+    <button type="button" class="btn btn-green btn-block add" id="add">+ Ajouter un plat</button>
+
+    <details class="set">
+      <summary>Réglages des horaires</summary>
+      <div class="body">
+        <label class="f">Le site affiche le menu du soir à partir de
+          <select id="switch"></select>
+          <small>Avant cette heure, les clients voient d’abord le menu du matin.</small>
+        </label>
+        <label class="f">Horaires du menu du matin <small>Facultatif. Exemple : 8 h – 12 h</small>
+          <input type="text" id="h-matin" maxlength="60">
+        </label>
+        <label class="f">Horaires du menu du soir <small>Facultatif. Exemple : 18 h – minuit</small>
+          <input type="text" id="h-soir" maxlength="60">
+        </label>
+      </div>
+    </details>
+
+    <details class="set" id="pw-box">
+      <summary>Changer mon mot de passe</summary>
+      <form class="body" id="pw-form" novalidate>
+        <p style="margin:0;color:var(--muted)">Choisissez un mot de passe que vous seul connaissez : au moins 8 caractères, avec des lettres et des chiffres. Il remplace l’ancien sur tous vos téléphones.</p>
+        <input type="text" name="username" value="yaye-ndioba" autocomplete="username" hidden>
+        <label class="f">Nouveau mot de passe
+          <input type="password" id="pw-new" autocomplete="new-password" minlength="8" maxlength="100">
+        </label>
+        <label class="f">Retapez le nouveau mot de passe
+          <input type="password" id="pw-new2" autocomplete="new-password" maxlength="100">
+        </label>
+        <label class="check"><input type="checkbox" id="pw-show"> Afficher les mots de passe</label>
+        <div class="err" id="pw-err" hidden></div>
+        <button type="submit" class="btn btn-green btn-block" id="pw-save">Changer le mot de passe</button>
+      </form>
+    </details>
+  </main>
+
+  <div class="bar">
+    <div class="wrap">
+      <span class="state" id="state">Tout est enregistré.</span>
+      <button type="button" class="btn btn-gold" id="save" disabled>Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Fenêtre d'édition d'un plat -->
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <form class="panel" id="edit-form" novalidate>
+    <h2 id="sheet-title">Modifier le plat</h2>
+    <div class="photo-pick">
+      <div class="prev" id="e-prev">Pas de photo</div>
+      <div class="btns">
+        <label class="btn btn-line">📷 Prendre une photo<input type="file" accept="image/*" capture="environment" id="e-cam" hidden></label>
+        <label class="btn btn-line">🖼️ Choisir dans la galerie<input type="file" accept="image/*" id="e-file" hidden></label>
+      </div>
+    </div>
+    <label class="f">Nom du plat
+      <input type="text" id="e-name" maxlength="80" required placeholder="Ex. : Thiéboudienne">
+    </label>
+    <label class="f">Prix
+      <div class="price-wrap"><input type="text" id="e-price" inputmode="numeric" pattern="[0-9 ]*" maxlength="9" required placeholder="1500"><span>FCFA</span></div>
+    </label>
+    <label class="f">Description <small>Facultatif. Une phrase courte.</small>
+      <textarea id="e-desc" maxlength="200" placeholder="Ex. : Riz au poisson, légumes et sauce tomate."></textarea>
+    </label>
+    <label class="check"><input type="checkbox" id="e-av"> Disponible aujourd’hui</label>
+    <details class="en">
+      <summary>Version anglaise (facultatif)</summary>
+      <div class="body">
+        <label class="f">Nom en anglais <input type="text" id="e-name-en" maxlength="80"></label>
+        <label class="f">Description en anglais <textarea id="e-desc-en" maxlength="200"></textarea></label>
+        <small style="color:var(--muted)">Si vous laissez vide, le texte français s’affiche aussi en anglais.</small>
+      </div>
+    </details>
+    <div class="err" id="e-err" hidden></div>
+    <div class="acts">
+      <button type="submit" class="btn btn-green">Valider</button>
+      <button type="button" class="btn btn-line" id="e-cancel">Annuler</button>
+    </div>
+    <button type="button" class="btn btn-red btn-block" id="e-del">Supprimer ce plat</button>
+  </form>
+</div>
+
+<div class="toast" id="toast" hidden role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var NAMES = { matin: 'Matin', soir: 'Soir', boissons: 'Boissons' };
+  var KEY = 'yn-admin-pw';
+  var pw = '';
+  var menu = null;        // menu en cours de modification
+  var dirty = false;
+  var current = 'matin';
+  var editing = null;     // { section, index } ou { section, index: -1 } pour un nouveau plat
+  var pending = null;     // nouvelle photo choisie dans la fenêtre d'édition { blob, url }
+
+  function $(id) { return document.getElementById(id); }
+  function store(get, val) {
+    try {
+      if (get) return localStorage.getItem(KEY) || sessionStorage.getItem(KEY) || '';
+      localStorage.removeItem(KEY); sessionStorage.removeItem(KEY);
+      if (val) (($('remember').checked) ? localStorage : sessionStorage).setItem(KEY, val);
+    } catch (e) { return ''; }
+  }
+  function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' FCFA'; }
+  var toastTimer;
+  function toast(msg, bad) {
+    var t = $('toast'); t.textContent = msg; t.className = 'toast' + (bad ? ' bad' : ''); t.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.hidden = true; }, bad ? 6000 : 3500);
+  }
+  function api(path, opts) {
+    opts = opts || {};
+    opts.headers = opts.headers || {};
+    opts.headers['Authorization'] = 'Bearer ' + pw;
+    return fetch(path, opts).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        if (!r.ok) { var e = new Error(d.message || ('Erreur ' + r.status)); e.status = r.status; throw e; }
+        return d;
+      });
+    });
+  }
+
+  // ---------- Connexion ----------
+  function login(p, silent) {
+    pw = p;
+    $('login-btn').disabled = true;
+    return api('/api/login', { method: 'POST' }).then(function () {
+      store(false, p);
+      return fetch('/api/menu', { cache: 'no-store' }).then(function (r) { return r.json(); });
+    }).then(function (m) {
+      menu = m;
+      menu.settings = menu.settings || { switchHour: 17, matinHours: '', soirHours: '' };
+      ['matin', 'soir', 'boissons'].forEach(function (k) { menu.sections[k] = menu.sections[k] || []; });
+      $('login').hidden = true; $('app').hidden = false;
+      fillSettings(); render(); setDirty(false);
+    }).catch(function (e) {
+      store(false, '');
+      if (!silent) { $('login-err').textContent = e.status === 401 ? 'Mot de passe incorrect.' : 'Connexion impossible. Vérifiez internet et réessayez.'; $('login-err').hidden = false; }
+    }).then(function () { $('login-btn').disabled = false; });
+  }
+  $('login-form').addEventListener('submit', function (e) {
+    e.preventDefault(); $('login-err').hidden = true;
+    if ($('pw').value) login($('pw').value);
+  });
+  // Confirmation en deux appuis (sans fenêtre du navigateur) : le 1er appui change le texte du bouton
+  function armed(b, msg) {
+    if (b.getAttribute('data-armed') === '1') { b.removeAttribute('data-armed'); b.textContent = b.getAttribute('data-label'); clearTimeout(b._t); return true; }
+    if (!b.getAttribute('data-label')) b.setAttribute('data-label', b.textContent);
+    b.setAttribute('data-armed', '1'); b.textContent = msg;
+    clearTimeout(b._t);
+    b._t = setTimeout(function () { b.removeAttribute('data-armed'); b.textContent = b.getAttribute('data-label'); }, 5000);
+    return false;
+  }
+  $('logout').addEventListener('click', function () {
+    if (dirty && !armed(this, 'Quitter sans enregistrer ?')) return;
+    store(false, ''); pw = ''; dirty = false; location.reload();
+  });
+  var saved = store(true);
+  if (saved) login(saved, true);
+
+  // ---------- Liste des plats ----------
+  function setDirty(v) {
+    dirty = v;
+    $('save').disabled = !v;
+    $('state').textContent = v ? 'Modifications non enregistrées' : 'Tout est enregistré.';
+    $('state').className = 'state' + (v ? ' dirty' : '');
+  }
+  window.addEventListener('beforeunload', function (e) { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+
+  var tabs = document.querySelectorAll('.seg button');
+  for (var i = 0; i < tabs.length; i++) tabs[i].addEventListener('click', function () { current = this.getAttribute('data-s'); render(); });
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function btn(label, cls, fn, aria) { var b = el('button', 'btn ' + cls, label); b.type = 'button'; if (aria) b.setAttribute('aria-label', aria); b.addEventListener('click', fn); return b; }
+
+  function render() {
+    for (var t = 0; t < tabs.length; t++) {
+      var k = tabs[t].getAttribute('data-s');
+      tabs[t].setAttribute('aria-selected', k === current ? 'true' : 'false');
+      var n = menu.sections[k].length;
+      tabs[t].querySelector('small').textContent = n + (n > 1 ? ' plats' : ' plat');
+    }
+    $('add').textContent = current === 'boissons' ? '+ Ajouter une boisson' : '+ Ajouter un plat au menu du ' + NAMES[current].toLowerCase();
+    var list = $('list'); list.innerHTML = '';
+    var items = menu.sections[current];
+    if (!items.length) {
+      list.appendChild(el('div', 'empty', 'Aucun plat dans le menu « ' + NAMES[current] + ' » pour le moment. Appuyez sur le bouton vert pour en ajouter un.'));
+      return;
+    }
+    items.forEach(function (it, idx) {
+      var card = el('div', 'item' + (it.available === false ? ' out' : ''));
+      var th;
+      var src = it._preview || it.img;
+      if (src) { th = el('img', 'thumb'); th.src = src; th.alt = ''; } else th = el('div', 'thumb', 'Pas de photo');
+      card.appendChild(th);
+      var info = el('div', 'info');
+      info.appendChild(el('span', 'name', it.name));
+      info.appendChild(el('span', 'price', fmt(it.price)));
+      if (it.available === false) info.appendChild(el('span', 'tag out', 'Épuisé'));
+      if (it._blob) info.appendChild(el('span', 'tag new', 'Nouvelle photo'));
+      card.appendChild(info);
+      var row = el('div', 'row');
+      row.appendChild(btn('Modifier', 'btn-green grow', function () { openEdit(current, idx); }));
+      row.appendChild(btn(it.available === false ? 'Remettre en vente' : 'Épuisé', 'btn-line', function () {
+        it.available = it.available === false; setDirty(true); render();
+      }));
+      var up = btn('↑', 'btn-line ico', function () { move(idx, -1); }, 'Monter'); up.disabled = idx === 0;
+      var dn = btn('↓', 'btn-line ico', function () { move(idx, 1); }, 'Descendre'); dn.disabled = idx === items.length - 1;
+      row.appendChild(up); row.appendChild(dn);
+      card.appendChild(row);
+      list.appendChild(card);
+    });
+  }
+  function move(idx, d) {
+    var a = menu.sections[current], j = idx + d;
+    if (j < 0 || j >= a.length) return;
+    var x = a[idx]; a[idx] = a[j]; a[j] = x; setDirty(true); render();
+  }
+  $('add').addEventListener('click', function () { openEdit(current, -1); });
+
+  // ---------- Réglages ----------
+  function fillSettings() {
+    var sel = $('switch'); sel.innerHTML = '';
+    for (var h = 10; h <= 23; h++) { var o = el('option', null, h + ' h'); o.value = h; sel.appendChild(o); }
+    sel.value = String(menu.settings.switchHour != null ? menu.settings.switchHour : 17);
+    $('h-matin').value = menu.settings.matinHours || '';
+    $('h-soir').value = menu.settings.soirHours || '';
+  }
+  $('switch').addEventListener('change', function () { menu.settings.switchHour = parseInt(this.value, 10); setDirty(true); });
+  $('h-matin').addEventListener('input', function () { menu.settings.matinHours = this.value; setDirty(true); });
+  $('h-soir').addEventListener('input', function () { menu.settings.soirHours = this.value; setDirty(true); });
+
+  // ---------- Mot de passe ----------
+  $('pw-see').addEventListener('change', function () { $('pw').type = this.checked ? 'text' : 'password'; });
+  $('pw-show').addEventListener('change', function () { $('pw-new').type = $('pw-new2').type = this.checked ? 'text' : 'password'; });
+  $('pw-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var a = $('pw-new').value, b2 = $('pw-new2').value, err = $('pw-err');
+    err.hidden = true;
+    var msg = a.length < 8 ? 'Le mot de passe doit faire au moins 8 caractères.' : (a !== b2 ? 'Les deux mots de passe ne sont pas identiques.' : '');
+    if (msg) { err.textContent = msg; err.hidden = false; return; }
+    var btnPw = $('pw-save'); btnPw.disabled = true;
+    api('/api/password', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: a }) }).then(function () {
+      pw = a; store(false, a);
+      $('pw-new').value = $('pw-new2').value = ''; $('pw-box').open = false;
+      toast('Mot de passe changé ✓ Utilisez le nouveau la prochaine fois.');
+    }).catch(function (e2) {
+      err.textContent = e2.message && e2.message !== 'Failed to fetch' ? e2.message : 'Pas de connexion internet. Réessayez.'; err.hidden = false;
+    }).then(function () { btnPw.disabled = false; });
+  });
+
+  // ---------- Fenêtre d'édition ----------
+  var lastFocus = null;
+  function showPrev(src) {
+    var box = $('e-prev');
+    if (src) {
+      var img = document.createElement('img'); img.className = 'prev'; img.id = 'e-prev'; img.src = src; img.alt = 'Photo du plat';
+      box.replaceWith(img);
+    } else {
+      var d = el('div', 'prev', 'Pas de photo'); d.id = 'e-prev'; box.replaceWith(d);
+    }
+  }
+  function openEdit(section, index) {
+    editing = { section: section, index: index };
+    pending = null;
+    var it = index >= 0 ? menu.sections[section][index] : { name: '', price: '', desc: '', name_en: '', desc_en: '', available: true, img: '' };
+    $('sheet-title').textContent = index >= 0 ? 'Modifier le plat' : (section === 'boissons' ? 'Nouvelle boisson' : 'Nouveau plat · ' + NAMES[section]);
+    $('e-name').value = it.name || '';
+    $('e-price').value = it.price === '' || it.price == null ? '' : String(it.price);
+    $('e-desc').value = it.desc || '';
+    $('e-name-en').value = it.name_en || '';
+    $('e-desc-en').value = it.desc_en || '';
+    $('e-av').checked = it.available !== false;
+    $('e-del').hidden = index < 0;
+    if ($('e-del').getAttribute('data-armed')) { $('e-del').removeAttribute('data-armed'); $('e-del').textContent = $('e-del').getAttribute('data-label'); }
+    $('e-err').hidden = true;
+    showPrev(it._preview || it.img);
+    lastFocus = document.activeElement;
+    $('sheet').hidden = false; document.body.style.overflow = 'hidden';
+    if (index < 0) setTimeout(function () { $('e-name').focus(); }, 50);
+  }
+  function closeEdit() {
+    $('sheet').hidden = true; document.body.style.overflow = '';
+    if (pending && pending.url) { /* photo non validée : on l'oublie */ }
+    pending = null; editing = null;
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $('e-cancel').addEventListener('click', closeEdit);
+  $('sheet').addEventListener('click', function (e) { if (e.target === this) closeEdit(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('sheet').hidden) closeEdit(); });
+
+  $('e-del').addEventListener('click', function () {
+    var it = menu.sections[editing.section][editing.index];
+    if (!armed(this, 'Appuyez encore pour supprimer « ' + it.name + ' »')) return;
+    menu.sections[editing.section].splice(editing.index, 1);
+    setDirty(true); closeEdit(); render();
+    toast('Plat supprimé. Appuyez sur Enregistrer pour confirmer.');
+  });
+
+  // Réduit la photo (1200 px maximum) pour qu'elle s'envoie vite et s'affiche vite
+  function compress(file) {
+    return new Promise(function (resolve, reject) {
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onload = function () {
+        var max = 1200, w = img.naturalWidth, h = img.naturalHeight;
+        var r = Math.min(1, max / Math.max(w, h));
+        var c = document.createElement('canvas');
+        c.width = Math.round(w * r); c.height = Math.round(h * r);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(function (b) { b ? resolve(b) : reject(new Error('Photo illisible')); }, 'image/jpeg', 0.82);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); reject(new Error('Photo illisible')); };
+      img.src = url;
+    });
+  }
+  function onPick() {
+    var f = this.files && this.files[0]; this.value = '';
+    if (!f) return;
+    compress(f).then(function (blob) {
+      pending = { blob: blob, url: URL.createObjectURL(blob) };
+      showPrev(pending.url);
+    }).catch(function () {
+      $('e-err').textContent = 'Cette photo ne peut pas être lue. Essayez une autre photo.'; $('e-err').hidden = false;
+    });
+  }
+  $('e-cam').addEventListener('change', onPick);
+  $('e-file').addEventListener('change', onPick);
+
+  $('edit-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = $('e-name').value.trim();
+    var price = parseInt($('e-price').value.replace(/[^\d]/g, ''), 10);
+    var err = !name ? 'Écrivez le nom du plat.' : (isNaN(price) ? 'Écrivez le prix en chiffres, par exemple 1500.' : '');
+    if (err) { $('e-err').textContent = err; $('e-err').hidden = false; return; }
+    var list = menu.sections[editing.section];
+    var it = editing.index >= 0 ? list[editing.index] : { id: 'p' + Date.now().toString(36), img: '' };
+    it.name = name; it.price = price;
+    it.desc = $('e-desc').value.trim();
+    it.name_en = $('e-name-en').value.trim();
+    it.desc_en = $('e-desc-en').value.trim();
+    it.available = $('e-av').checked;
+    if (pending) { it._blob = pending.blob; it._preview = pending.url; it.contain = false; }
+    if (editing.index < 0) list.push(it);
+    var isNew = editing.index < 0;
+    pending = null;
+    setDirty(true); closeEdit(); render();
+    toast(isNew ? 'Plat ajouté. Appuyez sur Enregistrer pour le publier.' : 'Modifié. Appuyez sur Enregistrer pour publier.');
+  });
+
+  // ---------- Enregistrement ----------
+  $('save').addEventListener('click', function () {
+    var b = this; b.disabled = true; b.innerHTML = '<span class="spin" aria-hidden="true"></span> Enregistrement…';
+    var all = [];
+    ['matin', 'soir', 'boissons'].forEach(function (k) { menu.sections[k].forEach(function (it) { if (it._blob) all.push(it); }); });
+    var chain = Promise.resolve();
+    all.forEach(function (it, n) {
+      chain = chain.then(function () {
+        $('state').textContent = 'Envoi des photos ' + (n + 1) + ' / ' + all.length + '…';
+        return api('/api/upload', { method: 'POST', headers: { 'Content-Type': 'image/jpeg' }, body: it._blob }).then(function (d) {
+          it.img = d.url; delete it._blob;
+        });
+      });
+    });
+    chain.then(function () {
+      var clean = { settings: menu.settings, sections: {} };
+      ['matin', 'soir', 'boissons'].forEach(function (k) {
+        clean.sections[k] = menu.sections[k].map(function (it) {
+          return { id: it.id, name: it.name, name_en: it.name_en || '', desc: it.desc || '', desc_en: it.desc_en || '', price: it.price, img: it.img || '', available: it.available !== false, contain: it.contain === true };
+        });
+      });
+      return api('/api/menu', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(clean) });
+    }).then(function () {
+      setDirty(false); render();
+      toast('Enregistré ✓ Le site est à jour (moins d’une minute).');
+    }).catch(function (e) {
+      setDirty(true); render();
+      if (e.status === 401) { toast('Mot de passe refusé. Reconnectez-vous.', true); store(false, ''); }
+      else toast((e.message && e.message !== 'Failed to fetch' ? e.message : 'Pas de connexion internet.') + ' Rien n’est perdu, réessayez.', true);
+    }).then(function () { b.textContent = 'Enregistrer'; b.disabled = !dirty; });
+  });
+})();
+</script>
+</body>
+</html>
