@@ -268,7 +268,7 @@ function renderMenu(menu) {
     } else {
       inner += '      <div class="menu-empty" style="grid-column:1/-1"><span>' +
         both('Ce menu sera bientôt en ligne. Demandez les plats du jour sur WhatsApp.', 'This menu is coming soon. Ask for today’s dishes on WhatsApp.') +
-        '</span><a class="btn btn-green" href="https://wa.me/221777147957" data-wa>' + both('Demander sur WhatsApp', 'Ask on WhatsApp') + '</a></div>';
+        '</span><a class="btn btn-green" href="https://wa.me/221764957855" data-wa>' + both('Demander sur WhatsApp', 'Ask on WhatsApp') + '</a></div>';
     }
     panels += '\n    <div id="panel-' + s.key + '" role="tabpanel" aria-labelledby="tab-' + s.key + '" class="dish-grid' + (drinks ? ' drinks' : '') + '"' + (on ? '' : ' hidden') + '>\n' + inner + '\n    </div>\n';
   }
@@ -282,7 +282,7 @@ function renderJsonLd(menu, origin) {
     '@type': 'Restaurant',
     name: 'Restaurant Yaye Ndioba',
     servesCuisine: 'Sénégalaise',
-    telephone: '+221777147957',
+    telephone: '+221764957855',
     url: origin + '/',
     image: origin + '/img/devanture.webp',
     priceRange: 'FCFA',
